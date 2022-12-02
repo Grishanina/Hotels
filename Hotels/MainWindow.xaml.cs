@@ -23,7 +23,9 @@ namespace Hotels
         public MainWindow()
         {
             InitializeComponent();
+            ClassBase.BD = new Entities();
             ClassFrame.MainFrame = fMain;
+            ClassFrame.MainFrame.Navigate(new AutoPage());
         }
     }
 }

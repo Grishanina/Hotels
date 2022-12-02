@@ -23,6 +23,7 @@ namespace Hotels
         public AutoPage()
         {
             InitializeComponent();
+            listHotel.ItemsSource = ClassBase.BD.Hotel.ToList();
         }
     }
 }

@@ -9,7 +9,7 @@
       Title="AutoPage">
 
     <Grid>
-        <ListView Name="listCat" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="500">
+        <ListView Name="listHotel" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="500">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel HorizontalAlignment="Center"></WrapPanel>
@@ -20,12 +20,12 @@
                     <Border Padding="5" CornerRadius="5" BorderThickness="1" BorderBrush="Aquamarine">
                         <Grid Name="gridMain" Width="200" Height="200" Background="{Binding GenderColor}">
                             <StackPanel>
-                                <TextBlock Text="{Binding NameBreed}"/>
+                                <TextBlock Text="{Binding Name}"/>
                                 <Image Width="150" Height="150" />
                                 <TextBlock Text="{Binding NameBreed}"/>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding NameBreed}"/>
-                                    <TextBlock Text="{Binding NameBreed}"/>
+                                    <TextBlock Text="{Binding CountOfStars}"/>
+                                    <TextBlock Text="{Binding CountryCode}"/>
                                 </StackPanel>
                             </StackPanel>
                         </Grid>
