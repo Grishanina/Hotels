@@ -23,7 +23,8 @@ namespace Hotels
         public AutoPage()
         {
             InitializeComponent();
-            listHotel.ItemsSource = ClassBase.BD.Hotel.ToList();
+            listHotel.ItemsSource = ClassBase.BD.Tour.ToList();
+            listHotel.Background = new SolidColorBrush(Color.FromRgb(186, 227, 232));
         }
     }
 }

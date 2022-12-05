@@ -4,6 +4,21 @@
              xmlns:local="clr-namespace:Hotels"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="styleName" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Technical Italic, Comic Sans MS, Arial" />
+        </Style>
+        <Style x:Key="stylePrice" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Technical Italic, Comic Sans MS, Arial" />
+            <Setter Property="FontWeight" Value="DemiBold"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Technical Italic, Comic Sans MS, Arial" />
+        </Style>
     </Application.Resources>
 </Application>

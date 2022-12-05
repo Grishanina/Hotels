@@ -5,11 +5,21 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Hotels"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="980"
       Title="AutoPage">
 
     <Grid>
-        <ListView Name="listHotel" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="500">
+        <StackPanel>
+            <StackPanel HorizontalAlignment="Center" Width="400">
+                <GroupBox Header="Введите текст для поиска" Margin="20,0,20,0">
+                    <TextBox Name="tbSearch" TextChanged="tbSearch_TextChanged" Height="30" FontSize="16"></TextBox>
+                </GroupBox>
+                <GroupBox Header="Выберите тип" Margin="20, 0, 20 ,0" >
+                    <ComboBox Name="cmbType" SelectionChanged="cmbType_SelectionChanged" Width="350" ></ComboBox>
+                </GroupBox>
+                <CheckBox Name="cbPhoto" Checked="cbPhoto_Checked" Unchecked="cbPhoto_Checked" Margin="20, 10, 20 , 10" FontWeight="DemiBold">Только актуальные туры</CheckBox>
+            </StackPanel>
+            <ListView Name="listHotel" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel HorizontalAlignment="Center"></WrapPanel>
@@ -17,15 +27,15 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border Padding="5" CornerRadius="5" BorderThickness="1" BorderBrush="Aquamarine">
-                        <Grid Name="gridMain" Width="200" Height="200" Background="{Binding GenderColor}">
+                    <Border Padding="5"  BorderThickness="2" BorderBrush="Black">
+                            <Grid Name="gridMain" Height="260" Background="{Binding GenderColor}">
                             <StackPanel>
-                                <TextBlock Text="{Binding Name}"/>
-                                <Image Width="150" Height="150" />
-                                <TextBlock Text="{Binding NameBreed}"/>
+                                <TextBlock TextWrapping="Wrap" Text="{Binding Name}" Style="{StaticResource styleName}"/>
+                                <Image Width="150" Height="150" Source="Image\picture.png"/>
+                                <TextBlock Text="{Binding Price, StringFormat={}{0:F0} РУБ.}" Style="{StaticResource stylePrice}"/>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{Binding CountOfStars}"/>
-                                    <TextBlock Text="{Binding CountryCode}"/>
+                                    <TextBlock Text="{Binding TicketCount}"/>
                                 </StackPanel>
                             </StackPanel>
                         </Grid>
@@ -33,5 +43,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        </StackPanel>
     </Grid>
 </Page>
