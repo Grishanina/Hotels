@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hotels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="980">
+        Title="MainWindow" Height="720" Width="1080">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
-            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>

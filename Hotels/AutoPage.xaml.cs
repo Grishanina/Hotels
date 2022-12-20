@@ -23,8 +23,32 @@ namespace Hotels
         public AutoPage()
         {
             InitializeComponent();
-            listHotel.ItemsSource = ClassBase.BD.Tour.ToList();
-            listHotel.Background = new SolidColorBrush(Color.FromRgb(186, 227, 232));
+            listTour.ItemsSource = ClassBase.BD.Tour.ToList();
+            listTour.Background = new SolidColorBrush(Color.FromRgb(186, 227, 232));
+        }
+
+        private void TextBlock_Loaded(object sender, RoutedEventArgs e)
+        {
+            TextBlock tb = (TextBlock)sender;
+            int index = Convert.ToInt32(tb.Uid);
+
+            List<Tour> TP = ClassBase.BD.Tour.Where(x => x.Id == index).ToList();
+
+            foreach (Tour prd in TP)
+            {
+                if (prd.IsActual == false)
+                {
+                    tb.Foreground = Brushes.Red;
+                    tb.Text = "Не актуален";
+
+                }
+                else if (prd.IsActual == true)
+                {
+                    tb.Foreground = Brushes.Green;
+                    tb.Text = "Актуален";
+                }
+            }
+
         }
     }
 }
